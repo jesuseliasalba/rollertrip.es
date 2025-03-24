@@ -1,10 +1,9 @@
 import Timeline from "@mui/lab/Timeline";
-
 import "./TimeLine.css";
 import { useEffect, useState } from "react";
 import { ExpandMore } from "@mui/icons-material";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
-import ExpandInfo from "./expandInfo/ExpandInfo";
+import ExpandInfo from "./ExpandInfo/ExpandInfo";
 import { timelineItemClasses } from "@mui/lab";
 
 const AntesDe = [
