@@ -206,7 +206,7 @@ const TimeLine = () => {
       </Accordion>
 
       <TabContext value={value}>
-        <TabList onChange={handleChange} aria-label="tabs">
+        <TabList onChange={handleChange} aria-label="tabs" centered>
           <Tab value="one" label="Antes de RollerTrip" />
           <Tab value="two" label="Año 2024" />
           <Tab value="three" label="Año 2025" />

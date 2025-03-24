@@ -45,16 +45,30 @@ const ExpandInfo = ({ data, size, length }) => {
           </p>
           {data.long_text && (
             <>
-              <ExpandMore
+              <div
                 onClick={handleExpandClick}
                 aria-expanded={expanded}
                 aria-label="show more"
-                sx={{
+                style={{
                   cursor: "pointer",
-                  transform: expanded ? "rotate(180deg)" : "rotate(0deg)",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "2px",
                   transition: "transform 0.3s ease-in-out",
                 }}
-              ></ExpandMore>
+              >
+                <ExpandMore
+                  sx={{
+                    transform: expanded ? "rotate(180deg)" : "rotate(0deg)",
+                    transition: "transform 0.3s ease-in-out",
+                    fontSize: "1.3rem",
+                  }}
+                />
+                <span style={{ fontSize: "0.9rem", color: "#666" }}>
+                  Leer más...
+                </span>
+              </div>
+
               <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <p className="expanded-text">{data.long_text}</p>
               </Collapse>
