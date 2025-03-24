@@ -1,39 +1,133 @@
 import Timeline from "@mui/lab/Timeline";
-import TimelineItem, { timelineItemClasses } from "@mui/lab/TimelineItem";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import TimelineConnector from "@mui/lab/TimelineConnector";
-import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineDot from "@mui/lab/TimelineDot";
+
 import "./TimeLine.css";
 import { useEffect, useState } from "react";
+import { ExpandMore } from "@mui/icons-material";
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import ExpandInfo from "./expandInfo/ExpandInfo";
+import { timelineItemClasses } from "@mui/lab";
 
-const TimeLineData = [
+const AntesDe = [
   {
     index: 1,
-    year: "2020",
-    text: "Se crea rollertrip",
+    title: "2022 - Zaragoza Megatrip",
+    text: "Todo comienza en un grupo de WhatsApp. ",
+    long_text:
+      "Los eventos en patines, surgieron de manera espontánea de la propia comunidad, el verano de 2022. La mayoría de nosotros participó en ellos, y a principios de 2024, decidimos iniciar este proyecto, como una manera de agrupar, difundir, organizar y mejorar al máximo estos eventos, siempre de la mano de la comunidad. Nuestro primer año organizamos 5 eventos en: Palma de Mallorca, Murcia, Zaragoza, Madrid y Málaga. En ellos, contamos con entre 500 y 1.200 patinadores de toda España, incluyendo viajeros de Londres, Italia, Portugal, Polonia y Dubai, entre otros.",
   },
   {
     index: 2,
-    year: "2021",
-    text: "Se unen a la comunidad más de 1000 personas",
+    title: "2022 - Valencia a Fuego",
+    text: "Se organiza el primer evento en Valencia",
+    long_text: "",
   },
   {
     index: 3,
-    year: "2022",
-    text: "Se realizan más de 100 eventos en toda España",
+    title: "2023 - Mallorca en Llamas",
+    text: "Se organiza el primer evento en Mallorca",
+    long_text: "",
   },
   {
     index: 4,
-    year: "2023",
-    text: "Se realiza el primer evento internacional",
+    title: "2023 - Zaragoza Megatrip",
+    text: "Se organiza el segundo evento en Zaragoza",
+    long_text: "",
   },
   {
     index: 5,
-    year: "2024",
-    text: "Se convierte en la comunidad de patinaje más grande de Europa",
+    title: "2023 - Sevilla de Tranquis",
+    text: "Se organiza el primer evento en Sevilla",
+    long_text: "",
   },
 ];
+
+const Ano2024 = [
+  {
+    index: 1,
+    title: "Nacimiento de RollerTrip",
+    text: "Se crea la marca RollerTrip",
+    long_text: "",
+  },
+  {
+    index: 2,
+    title: "Mallorca en Llamas",
+    text: "Se organiza el primer evento en Mallorca",
+    long_text: "",
+  },
+  {
+    index: 3,
+    title: "Murcia AchoTour",
+    text: "",
+    long_text: "",
+  },
+  {
+    index: 4,
+    title: "Zaragoza Megatrip",
+    text: "",
+    long_text: "",
+  },
+  {
+    index: 5,
+    title: "Madrid al Cielo",
+    text: "",
+    long_text: "",
+  },
+  {
+    index: 6,
+    title: "Malaga Vibes",
+    text: "",
+    long_text: "",
+  },
+];
+
+const Ano2025 = [
+  {
+    index: 1,
+    title: "Murcia AchoTour",
+    text: "",
+    long_text: "",
+  },
+  {
+    index: 2,
+    title: "London Calling",
+    text: "",
+    long_text: "",
+  },
+  {
+    index: 3,
+    title: "Bilbao Pura Kalea",
+    text: "",
+    long_text: "",
+  },
+  {
+    index: 4,
+    title: "Sevilla de Tranquis",
+    text: "",
+    long_text: "",
+  },
+];
+
+const timeGenerator = ({ size, array }) => {
+  return (
+    <Timeline
+      position={size < 800 ? "" : "alternate"}
+      sx={
+        size < 800
+          ? {
+              [`& .${timelineItemClasses.root}:before`]: {
+                flex: 0,
+                padding: 0,
+              },
+            }
+          : ""
+      }
+    >
+      {array.map((data) => (
+        <ExpandInfo data={data} size={size} />
+      ))}
+    </Timeline>
+  );
+};
 
 const TimeLine = () => {
   const [size, setSize] = useState(window.innerWidth);
@@ -48,58 +142,42 @@ const TimeLine = () => {
   return (
     <div className="timeline">
       <h2>Nuestra historia</h2>
-      <h3>Antes de RollerTrip</h3>
-      <Timeline
-        position={size < 800 ? "" : "alternate"}
-        sx={
-          size < 800
-            ? {
-                [`& .${timelineItemClasses.root}:before`]: {
-                  flex: 0,
-                  padding: 0,
-                },
-              }
-            : ""
-        }
-      >
-        {TimeLineData.map((data) => {
-          return (
-            <TimelineItem key={data.index}>
-              <TimelineSeparator>
-                <TimelineDot />
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent>
-                <div
-                  className="timeline-content"
-                  style={{
-                    alignItems:
-                      size < 800
-                        ? "flex-start"
-                        : data.index % 2 === 0
-                        ? "flex-end"
-                        : "flex-start",
-                  }}
-                >
-                  <h4>{data.year}</h4>
-                  <p
-                    style={{
-                      textAlign:
-                        size < 800
-                          ? "start"
-                          : data.index % 2 === 0
-                          ? "end"
-                          : "start",
-                    }}
-                  >
-                    {data.text}
-                  </p>
-                </div>
-              </TimelineContent>
-            </TimelineItem>
-          );
-        })}
-      </Timeline>
+      <Accordion defaultExpanded>
+        <AccordionSummary
+          expandIcon={<ExpandMore />}
+          aria-controls="panel1a-content"
+          id="panel1-header"
+        >
+          <h3>Antes de RollerTrip</h3>
+        </AccordionSummary>
+        <AccordionDetails>
+          {timeGenerator({ size, array: AntesDe })}
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMore />}
+          aria-controls="panel1a-content"
+          id="panel1-header"
+        >
+          <h3>Año 2024</h3>
+        </AccordionSummary>
+        <AccordionDetails>
+          {timeGenerator({ size, array: Ano2024 })}
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMore />}
+          aria-controls="panel1a-content"
+          id="panel1-header"
+        >
+          <h3>Año 2025</h3>
+        </AccordionSummary>
+        <AccordionDetails>
+          {timeGenerator({ size, array: Ano2025 })}
+        </AccordionDetails>
+      </Accordion>
     </div>
   );
 };

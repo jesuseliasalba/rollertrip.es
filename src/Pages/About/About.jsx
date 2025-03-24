@@ -10,20 +10,28 @@ const About = () => {
           <h1 className="hero-title">¿Qué es rollertrip?</h1>
           <div className="hero-text">
             <p>
-              ¡Somos la comunidad roller más grande de España, y difundimos los
-              eventos sobre ruedas más top!
+              ¡Somos la comunidad de patinadores más grande de España, y
+              organizamos los eventos sobre ruedas más épicos!
             </p>
             <p>
-              Promovemos el patinaje como deporte al aire libre, método de
-              movilidad sostenible, pero sobre todo, como una forma de vida en
-              la que disfrutar al máximo viajando, y conociendo nuevas personas
-              y lugares increíbles.
+              Nuestra misión es crear momentos inolvidables para patinadores de
+              todos los niveles, promoviendo el patinaje como deporte al aire
+              libre, método de movilidad sostenible, pero sobre todo, como una
+              forma de vida en la que disfrutar al máximo viajando.
             </p>
             <p>
-              Empezamos este proyecto, con la visión de ayudar a mejorar los
-              eventos, darles difusión, y por primera vez, unir a toda la
-              comunidad de patinaje española.
+              Cada uno de nuestros eventos es una oportunidad para descubrir
+              nuevos lugares y conectar con cientos de personas que comparten la
+              misma pasión por el patinaje. Podrás encontrar rutas urbanas,
+              juegos en patines, masterclasses, fiestas, competiciones de
+              freeskate… ¡Y mucho más!
             </p>
+            <p>
+              Más que un grupo, somos una familia sobre ruedas. Si te encanta el
+              patinaje y quieres formar parte de algo grande, únete a nosotros y
+              prepárate para la mejor experiencia sobre ruedas.
+            </p>
+            <p>¡Nos vemos en el próximo evento!</p>
           </div>
           <div className="button-group">
             <Button

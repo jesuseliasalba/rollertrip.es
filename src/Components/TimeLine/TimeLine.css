@@ -2,6 +2,7 @@
   width: 100%;
   margin-left: 30px;
   margin-right: 30px;
+  margin-bottom: 80px;
 }
 
 .timeline > h2 {
@@ -19,4 +20,9 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.expanded-text {
+  font-size: 0.8rem;
+  text-align: justify;
 }
