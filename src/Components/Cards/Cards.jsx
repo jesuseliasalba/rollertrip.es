@@ -5,26 +5,26 @@ const card = [
   {
     id: 1,
     title: "Murcia Achotour",
-    image: "/cards/murcia.png",
-    mobile: "/cards/murcia2.png",
+    image: "/cards/murcia.webp",
+    mobile: "/cards/murcia2.webp",
   },
   {
     id: 2,
     title: "London Calling",
-    image: "/cards/london.png",
-    mobile: "/cards/london2.png",
+    image: "/cards/london.webp",
+    mobile: "/cards/london2.webp",
   },
   {
     id: 3,
     title: "Bilbao Pura Kalea",
-    image: "/cards/bilbo.png",
-    mobile: "/cards/bilbo2.png",
+    image: "/cards/bilbo.webp",
+    mobile: "/cards/bilbo2.webp",
   },
   {
     id: 4,
     title: "Sevilla de Tranquis",
-    image: "/cards/sevilla.png",
-    mobile: "/cards/sevilla2.png",
+    image: "/cards/sevilla.webp",
+    mobile: "/cards/sevilla2.webp",
   },
 ];
 
