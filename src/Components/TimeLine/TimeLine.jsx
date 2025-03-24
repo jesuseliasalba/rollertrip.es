@@ -127,7 +127,12 @@ const timeGenerator = ({ size, array }) => {
       }
     >
       {array.map((data) => (
-        <ExpandInfo data={data} size={size} length={array.length} />
+        <ExpandInfo
+          key={data.index}
+          data={data}
+          size={size}
+          length={array.length}
+        />
       ))}
     </Timeline>
   );
