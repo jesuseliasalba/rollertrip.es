@@ -1,0 +1,48 @@
+.home {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  overflow: hidden;
+  background-image: url("/hero/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.home > h1 {
+  color: var(--jea-color-primary);
+  font-size: 8rem;
+  font-style: italic;
+  padding: var(--jea-padding-xl);
+  margin-top: 50px;
+  text-shadow: 0px 0px 20px #000000;
+}
+
+.home > h2 {
+  color: var(--jea-color-primary);
+  font-size: 3rem;
+  font-style: italic;
+  margin-bottom: var(--jea-margin-l);
+  text-shadow: 0px 0px 20px #636363;
+}
+
+.home .button-hero:hover {
+  background-color: #0e598f;
+}
+
+@media (max-width: 768px) {
+  .home > h1 {
+    font-size: 3rem;
+  }
+
+  .home > h2 {
+    font-size: 1.2rem;
+  }
+
+  .home {
+    overflow: scroll;
+  }
+}

@@ -1,0 +1,9 @@
+a.active {
+  color: black;
+}
+
+.navBar {
+  font-family: "Gilroy-Bold", monospace;
+  font-weight: 700;
+  color: var(--jea-color-secondary);
+}
