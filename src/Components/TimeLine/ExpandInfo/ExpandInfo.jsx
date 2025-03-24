@@ -9,17 +9,18 @@ import {
 import { Collapse } from "@mui/material";
 import React, { useState } from "react";
 
-const ExpandInfo = ({ data, size }) => {
+const ExpandInfo = ({ data, size, length }) => {
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
   return (
     <TimelineItem key={data.index}>
       <TimelineSeparator>
         <TimelineDot />
-        <TimelineConnector />
+        {data.index !== length && <TimelineConnector />}
       </TimelineSeparator>
       <TimelineContent>
         <div

@@ -11,9 +11,10 @@
   padding-bottom: 20px;
 }
 
-.timeline > h3 {
-  font-size: 1.5rem;
-  font-weight: 500;
+.timeline h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--jea-color-secondary);
 }
 
 .timeline .timeline-content {

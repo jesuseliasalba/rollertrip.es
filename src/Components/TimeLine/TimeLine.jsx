@@ -122,7 +122,7 @@ const timeGenerator = ({ size, array }) => {
       }
     >
       {array.map((data) => (
-        <ExpandInfo data={data} size={size} />
+        <ExpandInfo data={data} size={size} length={array.length} />
       ))}
     </Timeline>
   );
@@ -141,7 +141,13 @@ const TimeLine = () => {
   return (
     <div className="timeline">
       <h2>Nuestra historia</h2>
-      <Accordion defaultExpanded>
+      <Accordion
+        defaultExpanded
+        sx={{
+          backgroundColor: "var(--jea-color-primary)",
+          marginBottom: "1rem",
+        }}
+      >
         <AccordionSummary
           expandIcon={<ExpandMore />}
           aria-controls="panel1a-content"
@@ -149,11 +155,16 @@ const TimeLine = () => {
         >
           <h3>Antes de RollerTrip</h3>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails sx={{ backgroundColor: "white" }}>
           {timeGenerator({ size, array: AntesDe })}
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion
+        sx={{
+          backgroundColor: "var(--jea-color-primary)",
+          marginBottom: "1rem",
+        }}
+      >
         <AccordionSummary
           expandIcon={<ExpandMore />}
           aria-controls="panel1a-content"
@@ -161,11 +172,16 @@ const TimeLine = () => {
         >
           <h3>Año 2024</h3>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails sx={{ backgroundColor: "white" }}>
           {timeGenerator({ size, array: Ano2024 })}
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion
+        sx={{
+          backgroundColor: "var(--jea-color-primary)",
+          marginBottom: "1rem",
+        }}
+      >
         <AccordionSummary
           expandIcon={<ExpandMore />}
           aria-controls="panel1a-content"
@@ -173,7 +189,7 @@ const TimeLine = () => {
         >
           <h3>Año 2025</h3>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails sx={{ backgroundColor: "white" }}>
           {timeGenerator({ size, array: Ano2025 })}
         </AccordionDetails>
       </Accordion>
