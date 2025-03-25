@@ -149,14 +149,17 @@ const TimeLine = () => {
       <Accordion
         defaultExpanded
         sx={{
-          backgroundColor: "var(--jea-color-primary)",
           marginBottom: "1rem",
+          backgroundColor: "transparent",
         }}
       >
         <AccordionSummary
           expandIcon={<ExpandMore />}
           aria-controls="panel1a-content"
           id="panel1-header"
+          sx={{
+            backgroundColor: "var(--jea-color-primary)",
+          }}
         >
           <h3>Antes de RollerTrip</h3>
         </AccordionSummary>
@@ -166,7 +169,7 @@ const TimeLine = () => {
       </Accordion>
       <Accordion
         sx={{
-          backgroundColor: "var(--jea-color-primary)",
+          backgroundColor: "transparent",
           marginBottom: "1rem",
         }}
       >
@@ -174,6 +177,7 @@ const TimeLine = () => {
           expandIcon={<ExpandMore />}
           aria-controls="panel1a-content"
           id="panel1-header"
+          sx={{ backgroundColor: "var(--jea-color-primary)" }}
         >
           <h3>Año 2024</h3>
         </AccordionSummary>
@@ -183,7 +187,7 @@ const TimeLine = () => {
       </Accordion>
       <Accordion
         sx={{
-          backgroundColor: "var(--jea-color-primary)",
+          backgroundColor: "transparent",
           marginBottom: "1rem",
         }}
       >
@@ -191,6 +195,7 @@ const TimeLine = () => {
           expandIcon={<ExpandMore />}
           aria-controls="panel1a-content"
           id="panel1-header"
+          sx={{ backgroundColor: "var(--jea-color-primary)" }}
         >
           <h3>Año 2025</h3>
         </AccordionSummary>

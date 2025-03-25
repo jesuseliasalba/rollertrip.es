@@ -36,6 +36,19 @@ const About = () => {
           <div className="button-group">
             <Button
               variant="contained"
+              component={NavLink}
+              to="/events"
+              className="about-button"
+              sx={{
+                backgroundColor: "var(--jea-color-secondary)",
+                color: "var(--jea-color-primary)",
+                fontFamily: "Gilroy-Bold, sans-serif",
+              }}
+            >
+              Ver eventos
+            </Button>
+            <Button
+              variant="contained"
               href={"https://chat.whatsapp.com/KQ1E99gm0hC6bcBzF6HVO0"}
               target="_blank"
               rel="noopener noreferrer"
@@ -47,19 +60,6 @@ const About = () => {
               }}
             >
               Únete a la comunidad
-            </Button>
-            <Button
-              variant="contained"
-              component={NavLink}
-              to="/events"
-              className="about-button"
-              sx={{
-                backgroundColor: "var(--jea-color-secondary)",
-                color: "var(--jea-color-primary)",
-                fontFamily: "Gilroy-Bold, sans-serif",
-              }}
-            >
-              Ver eventos
             </Button>
           </div>
         </div>
