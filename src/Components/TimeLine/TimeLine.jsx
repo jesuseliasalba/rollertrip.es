@@ -2,14 +2,9 @@ import Timeline from "@mui/lab/Timeline";
 import "./TimeLine.css";
 import { useEffect, useState } from "react";
 import { ExpandMore } from "@mui/icons-material";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Tab,
-} from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import ExpandInfo from "./ExpandInfo/ExpandInfo";
-import { TabContext, TabList, TabPanel, timelineItemClasses } from "@mui/lab";
+import { timelineItemClasses } from "@mui/lab";
 
 const AntesDe = [
   {
@@ -148,12 +143,6 @@ const TimeLine = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const [value, setValue] = useState("one");
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
   return (
     <div className="timeline">
       <h2>Nuestra historia</h2>
@@ -171,7 +160,7 @@ const TimeLine = () => {
         >
           <h3>Antes de RollerTrip</h3>
         </AccordionSummary>
-        <AccordionDetails sx={{ backgroundColor: "white" }}>
+        <AccordionDetails sx={{ backgroundColor: "var(--jea-color-tertiary)" }}>
           {timeGenerator({ size, array: AntesDe })}
         </AccordionDetails>
       </Accordion>
@@ -188,7 +177,7 @@ const TimeLine = () => {
         >
           <h3>Año 2024</h3>
         </AccordionSummary>
-        <AccordionDetails sx={{ backgroundColor: "white" }}>
+        <AccordionDetails sx={{ backgroundColor: "var(--jea-color-tertiary)" }}>
           {timeGenerator({ size, array: Ano2024 })}
         </AccordionDetails>
       </Accordion>
@@ -205,27 +194,10 @@ const TimeLine = () => {
         >
           <h3>Año 2025</h3>
         </AccordionSummary>
-        <AccordionDetails sx={{ backgroundColor: "white" }}>
+        <AccordionDetails sx={{ backgroundColor: "var(--jea-color-tertiary)" }}>
           {timeGenerator({ size, array: Ano2025 })}
         </AccordionDetails>
       </Accordion>
-
-      <TabContext value={value}>
-        <TabList onChange={handleChange} aria-label="tabs" centered>
-          <Tab value="one" label="Antes de RollerTrip" />
-          <Tab value="two" label="Año 2024" />
-          <Tab value="three" label="Año 2025" />
-        </TabList>
-        <TabPanel value="one">
-          {timeGenerator({ size, array: AntesDe })}
-        </TabPanel>
-        <TabPanel value="two">
-          {timeGenerator({ size, array: Ano2024 })}
-        </TabPanel>
-        <TabPanel value="three">
-          {timeGenerator({ size, array: Ano2025 })}
-        </TabPanel>
-      </TabContext>
     </div>
   );
 };

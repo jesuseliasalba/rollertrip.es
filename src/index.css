@@ -39,13 +39,18 @@ h6 {
   font-family: "Gilroy-Bold", sans-serif;
 }
 
+body {
+  background: url("/hero/hero.webp") no-repeat center center fixed;
+  background-size: cover;
+}
+
 :root {
   /* COLORS */
   --jea-color-white: white;
   --jea-color-black: black;
   --jea-color-primary: #ffcb03;
   --jea-color-secondary: #094068;
-  --jea-color-tertiary: #fff1bd;
+  --jea-color-tertiary: #fff2dd;
   --jea-color-cuaternary: #041d2f;
 
   /* FONT SIZES */
