@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import EventIcon from "@mui/icons-material/Event";
 import PlaceIcon from "@mui/icons-material/Place";
+import { NavLink } from "react-router-dom";
 
 const events = [
   {
@@ -88,7 +89,14 @@ const Events = () => {
 
       {events.map((event, index) =>
         event.highlight ? (
-          <Card key={index} sx={{ mb: 3, padding: "0" }}>
+          <Card
+            key={index}
+            sx={{
+              mb: 3,
+              padding: "0",
+              backgroundColor: "var(--jea-color-tertiary)",
+            }}
+          >
             <CardContent
               sx={{
                 width: "100%",
@@ -151,7 +159,13 @@ const Events = () => {
                       <Typography>{event.location}</Typography>
                     </Box>
                     <Box mt={2} display="flex">
-                      <Button variant="outlined">Más detalles</Button>
+                      <Button
+                        variant="contained"
+                        component={NavLink}
+                        to="/london"
+                      >
+                        Más detalles
+                      </Button>
                     </Box>
                   </Box>
                 </Box>
@@ -197,9 +211,9 @@ const Events = () => {
                 </Box>
                 <CardContent
                   sx={{
-                    backgroundColor: "white",
                     paddingTop: 6,
                     position: "relative",
+                    backgroundColor: "var(--jea-color-tertiary)",
                   }}
                 >
                   <Typography
