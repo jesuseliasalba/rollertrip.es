@@ -163,6 +163,7 @@ const Events = () => {
                         variant="contained"
                         component={NavLink}
                         to="/london"
+                        disabled
                       >
                         Más detalles
                       </Button>
