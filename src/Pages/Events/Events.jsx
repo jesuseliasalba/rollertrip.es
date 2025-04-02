@@ -34,6 +34,7 @@ const events = [
     img: "/events/london.png",
     highlight: true,
     completed: false,
+    route: "/events/london",
   },
   {
     title: "Bilbao Pura Kalea",
@@ -162,7 +163,7 @@ const Events = () => {
                       <Button
                         variant="contained"
                         component={NavLink}
-                        to="/london"
+                        to={event.route}
                         disabled
                       >
                         Más detalles

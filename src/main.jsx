@@ -19,7 +19,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="events" element={<Events />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="/london" element={<London />} />
+          <Route path="/events/london" element={<London />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

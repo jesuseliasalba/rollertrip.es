@@ -50,7 +50,7 @@ const Ano2024 = [
   {
     index: 2,
     title: "Mallorca en Llamas",
-    text: "Se organiza el primer evento en Mallorca",
+    text: "",
     long_text: "",
   },
   {
@@ -135,6 +135,11 @@ const timeGenerator = ({ size, array }) => {
 
 const TimeLine = () => {
   const [size, setSize] = useState(window.innerWidth);
+  const [expandedPanel, setExpandedPanel] = useState("panel1");
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpandedPanel(isExpanded ? panel : false);
+  };
 
   useEffect(() => {
     const handleResize = () => setSize(window.innerWidth);
@@ -147,7 +152,8 @@ const TimeLine = () => {
     <div className="timeline">
       <h2>Nuestra historia</h2>
       <Accordion
-        defaultExpanded
+        expanded={expandedPanel === "panel1"}
+        onChange={handleChange("panel1")}
         sx={{
           marginBottom: "1rem",
           backgroundColor: "transparent",
@@ -168,6 +174,8 @@ const TimeLine = () => {
         </AccordionDetails>
       </Accordion>
       <Accordion
+        expanded={expandedPanel === "panel2"}
+        onChange={handleChange("panel2")}
         sx={{
           backgroundColor: "transparent",
           marginBottom: "1rem",
@@ -186,6 +194,8 @@ const TimeLine = () => {
         </AccordionDetails>
       </Accordion>
       <Accordion
+        expanded={expandedPanel === "panel3"}
+        onChange={handleChange("panel3")}
         sx={{
           backgroundColor: "transparent",
           marginBottom: "1rem",
